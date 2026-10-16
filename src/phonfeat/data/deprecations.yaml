@@ -1,0 +1,42 @@
+# Deprecation rules for IPA and X-SAMPA canonicalization.
+#
+# Rules are applied longest-match-first, in the order listed.
+# A rule replaces every occurrence of `from` with `to`.
+#
+# This file is a first draft. Edit freely; the tests in
+# tests/test_canonicalize.py will reflect whatever is here.
+
+# IPA: Latin g -> IPA script g
+- from: "g"
+  to: "ɡ"
+  reason: "IPA convention uses U+0261 LATIN SMALL LETTER SCRIPT G."
+
+# Ligature affricates -> tie-barred forms
+- from: "ʧ"
+  to: "t͡ʃ"
+  reason: "Use tie-barred affricate instead of ligature."
+- from: "ʤ"
+  to: "d͡ʒ"
+  reason: "Use tie-barred affricate instead of ligature."
+- from: "ʦ"
+  to: "t͡s"
+  reason: "Use tie-barred affricate instead of ligature."
+- from: "ʣ"
+  to: "d͡z"
+  reason: "Use tie-barred affricate instead of ligature."
+- from: "ʨ"
+  to: "t͡ɕ"
+  reason: "Use tie-barred affricate instead of ligature."
+- from: "ʥ"
+  to: "d͡ʑ"
+  reason: "Use tie-barred affricate instead of ligature."
+
+# Archaic IPA: Latin small k with hook -> voiceless velar implosive
+- from: "ƙ"
+  to: "ɠ̥"
+  reason: "Archaic; use voiceless velar implosive."
+
+# Voiceless retroflex nasal: ring above -> ring below
+- from: "ɳ̊"
+  to: "ɳ̥"
+  reason: "Prefer ring below for voicelessness on nasals."

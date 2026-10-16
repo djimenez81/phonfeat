@@ -1,0 +1,65 @@
+# Canonical order of IPA diacritics.
+#
+# Combining marks are reordered to appear in the order in which
+# their categories appear in this list. Within a category, marks
+# are ordered by their position in the `symbols` list.
+#
+# Marks not listed here are placed after all listed marks, in
+# their original relative order.
+
+- category: phonation
+  symbols:
+    - "\u0325"   # ring below (voiceless)
+    - "\u030A"   # ring above (voiceless)
+    - "\u0324"   # diaeresis below (breathy voiced)
+    - "\u0330"   # tilde below (creaky voiced)
+
+- category: place
+  symbols:
+    - "\u032A"   # bridge below (dental)
+    - "\u033A"   # inverted bridge below (apical)
+    - "\u033B"   # square below (laminal)
+    - "\u033C"   # seagull below (linguolabial)
+
+- category: rounding
+  symbols:
+    - "\u02B7"   # modifier small w (labialized)
+    - "\u02B2"   # modifier small j (palatalized)
+    - "\u02E0"   # modifier small gamma (velarized)
+    - "\u02E4"   # modifier small reversed glottal stop (pharyngealized)
+    - "\u1D63"   # modifier small w (labialized, alternative)
+
+- category: syllabicity
+  symbols:
+    - "\u0329"   # vertical line below (syllabic)
+    - "\u032F"   # inverted breve below (non-syllabic)
+
+- category: release
+  symbols:
+    - "\u207F"   # superscript n (nasal release)
+    - "\u02E1"   # modifier small l (lateral release)
+    - "\u031A"   # corner above (no audible release)
+
+- category: nasalization
+  symbols:
+    - "\u0303"   # tilde (nasalized)
+
+- category: tongue_root
+  symbols:
+    - "\u0318"   # left tack below (advanced tongue root)
+    - "\u0319"   # right tack below (retracted tongue root)
+
+- category: length
+  symbols:
+    - "\u02D0"   # triangular colon (long)
+    - "\u02D1"   # half triangular colon (half long)
+    - "\u0306"   # breve (extra short)
+
+- category: tone
+  symbols:
+    - "\u030B"   # double acute (extra high tone)
+    - "\u0301"   # acute (high tone)
+    - "\u0304"   # macron (mid tone)
+    - "\u0300"   # grave (low tone)
+    - "\u030F"   # double grave (extra low tone)
+    - "\u030C"   # caron (falling contour)
