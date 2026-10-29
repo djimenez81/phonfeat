@@ -1,0 +1,12 @@
+- canonical: ŋ̟
+  sources:
+    - ŋ̟
+    - ŋ̟
+  features_agree: false
+  differing_features:
+    front:
+      - true
+      - null
+    back:
+      - false
+      - null

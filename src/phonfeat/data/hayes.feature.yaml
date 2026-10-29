@@ -1,0 +1,4216 @@
+schema_version: '1.0'
+name: hayes
+version: 0.1.0
+description: Feature system extracted from hayes.
+features:
+  - name: syllabic
+  - name: stress
+  - name: long
+  - name: consonantal
+  - name: sonorant
+  - name: continuant
+  - name: delayed release
+  - name: approximant
+  - name: tap
+  - name: trill
+  - name: nasal
+  - name: voice
+  - name: spread gl
+  - name: constr gl
+  - name: LABIAL
+  - name: round
+  - name: labiodental
+  - name: CORONAL
+  - name: anterior
+  - name: distributed
+  - name: strident
+  - name: lateral
+  - name: DORSAL
+  - name: high
+  - name: low
+  - name: front
+  - name: back
+  - name: tense
+phones:
+  - ipa: a
+    type: vowel
+    characteristics:
+      - fnt
+      - low
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: true
+      front: false
+      back: false
+  - ipa: b
+    type: consonant
+    characteristics:
+      - blb
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: b͡d
+    type: consonant
+    characteristics:
+      - blb
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: b͡v
+    type: consonant
+    characteristics:
+      - afr
+      - bld
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: true
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: b͡β
+    type: consonant
+    characteristics:
+      - afr
+      - blb
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: c
+    type: consonant
+    characteristics:
+      - pal
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: c͡ç
+    type: consonant
+    characteristics:
+      - afr
+      - pal
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: d
+    type: consonant
+    characteristics:
+      - alv
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: d̠͡ɮ̠
+    type: consonant
+    characteristics:
+      - alv
+      - rtr
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: d̪͡z̪
+    type: consonant
+    characteristics:
+      - dnt
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: d̪͡ð
+    type: consonant
+    characteristics:
+      - dnt
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: d̪͡ɮ̪
+    type: consonant
+    characteristics:
+      - dnt
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: d͡z
+    type: consonant
+    characteristics:
+      - alv
+      - sib afr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: d͡ɮ
+    type: consonant
+    characteristics:
+      - alv
+      - lat afr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: d͡ʑ
+    type: consonant
+    characteristics:
+      - alp
+      - sib afr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: d͡ʒ
+    type: consonant
+    characteristics:
+      - pla
+      - sib afr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: e
+    type: vowel
+    characteristics:
+      - fnt
+      - umd
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: true
+      back: false
+      tense: true
+  - ipa: f
+    type: consonant
+    characteristics:
+      - frc
+      - lbd
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: true
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: h
+    type: other
+    characteristics:
+      - frc
+      - glt
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: true
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: i
+    type: vowel
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+      tense: true
+  - ipa: j
+    type: other
+    characteristics:
+      - apr
+      - pal
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+      tense: true
+  - ipa: k
+    type: consonant
+    characteristics:
+      - stp
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: k̟
+    type: consonant
+    characteristics:
+      - atr
+      - stp
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: k̟͡x̟
+    type: consonant
+    characteristics:
+      - atr
+      - stp
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: k̠
+    type: consonant
+    characteristics:
+      - rtr
+      - stp
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+  - ipa: k̠͡x̠
+    type: consonant
+    characteristics:
+      - rtr
+      - stp
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+  - ipa: k͡p
+    type: consonant
+    characteristics:
+      - lbv
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: k͡x
+    type: consonant
+    characteristics:
+      - afr
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: l
+    type: consonant
+    characteristics:
+      - alv
+      - lat apr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: m
+    type: consonant
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: true
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: n
+    type: consonant
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: true
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: o
+    type: vowel
+    characteristics:
+      - bck
+      - rnd
+      - umd
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+      tense: true
+  - ipa: p
+    type: consonant
+    characteristics:
+      - blb
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: p͡f
+    type: consonant
+    characteristics:
+      - afr
+      - bld
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: true
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: p͡t
+    type: consonant
+    characteristics:
+      - blb
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: p͡ɸ
+    type: consonant
+    characteristics:
+      - afr
+      - blb
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: q
+    type: consonant
+    characteristics:
+      - stp
+      - uvl
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+  - ipa: q͡χ
+    type: consonant
+    characteristics:
+      - afr
+      - uvl
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+  - ipa: r
+    type: consonant
+    characteristics:
+      - alv
+      - trl
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: true
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: s
+    type: consonant
+    characteristics:
+      - alv
+      - sib frc
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: t
+    type: consonant
+    characteristics:
+      - alv
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: t̠͡ɬ̠
+    type: consonant
+    characteristics:
+      - alv
+      - rtr
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: t̪͡s̪
+    type: consonant
+    characteristics:
+      - dnt
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: t̪͡ɬ̪
+    type: consonant
+    characteristics:
+      - dnt
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: t̪͡θ
+    type: consonant
+    characteristics:
+      - dnt
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: t͡s
+    type: consonant
+    characteristics:
+      - alv
+      - sib afr
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: t͡ɕ
+    type: consonant
+    characteristics:
+      - alp
+      - sib afr
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: t͡ɬ
+    type: consonant
+    characteristics:
+      - alv
+      - lat afr
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: t͡ʃ
+    type: consonant
+    characteristics:
+      - pla
+      - sib afr
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: u
+    type: vowel
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+      tense: true
+  - ipa: v
+    type: consonant
+    characteristics:
+      - frc
+      - lbd
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: true
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: w
+    type: other
+    characteristics:
+      - ptr apr
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+      tense: true
+  - ipa: x
+    type: consonant
+    characteristics:
+      - frc
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: x̟
+    type: consonant
+    characteristics:
+      - atr
+      - frc
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: x̠
+    type: consonant
+    characteristics:
+      - frc
+      - rtr
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+  - ipa: y
+    type: vowel
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+      tense: true
+  - ipa: z
+    type: consonant
+    characteristics:
+      - alv
+      - sib frc
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: æ
+    type: vowel
+    characteristics:
+      - fnt
+      - sml
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: true
+      front: true
+      back: false
+  - ipa: ç
+    type: consonant
+    characteristics:
+      - frc
+      - pal
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ð
+    type: consonant
+    characteristics:
+      - dnt
+      - frc
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: ø
+    type: vowel
+    characteristics:
+      - fnt
+      - rnd
+      - umd
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: true
+      back: false
+      tense: true
+  - ipa: ħ
+    type: consonant
+    characteristics:
+      - frc
+      - phr
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: true
+      front: false
+      back: true
+  - ipa: ŋ̟
+    type: consonant
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: true
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ŋ̠
+    type: consonant
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: true
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+  - ipa: œ
+    type: vowel
+    characteristics:
+      - fnt
+      - lmd
+      - rnd
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: true
+      back: false
+      tense: false
+  - ipa: ɑ
+    type: vowel
+    characteristics:
+      - bck
+      - low
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: true
+      front: false
+      back: true
+  - ipa: ɒ
+    type: vowel
+    characteristics:
+      - bck
+      - low
+      - rnd
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: true
+      front: false
+      back: true
+  - ipa: ɔ
+    type: vowel
+    characteristics:
+      - bck
+      - lmd
+      - rnd
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+      tense: false
+  - ipa: ɕ
+    type: consonant
+    characteristics:
+      - alp
+      - sib frc
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ɖ
+    type: consonant
+    characteristics:
+      - rfx
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: ɖ͡ʐ
+    type: consonant
+    characteristics:
+      - rfx
+      - sib afr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: ɘ
+    type: vowel
+    characteristics:
+      - cnt
+      - umd
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: false
+      tense: true
+  - ipa: ə
+    type: vowel
+    characteristics:
+      - cnt
+      - mid
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: false
+      tense: false
+  - ipa: ɛ
+    type: vowel
+    characteristics:
+      - fnt
+      - lmd
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: true
+      back: false
+      tense: false
+  - ipa: ɞ
+    type: vowel
+    characteristics:
+      - cnt
+      - lmd
+      - rnd
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: false
+      tense: false
+  - ipa: ɟ
+    type: consonant
+    characteristics:
+      - pal
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ɟ͡ʝ
+    type: consonant
+    characteristics:
+      - afr
+      - pal
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ɡ
+    type: consonant
+    characteristics:
+      - stp
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: ɡ̟
+    type: consonant
+    characteristics:
+      - atr
+      - stp
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ɡ̟͡ɣ̟
+    type: consonant
+    characteristics:
+      - atr
+      - stp
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ɡ̠
+    type: consonant
+    characteristics:
+      - rtr
+      - stp
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+  - ipa: ɡ̠͡ɣ̠
+    type: consonant
+    characteristics:
+      - rtr
+      - stp
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+  - ipa: ɡ͡b
+    type: consonant
+    characteristics:
+      - lbv
+      - stp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: ɡ͡ɣ
+    type: consonant
+    characteristics:
+      - afr
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: ɢ
+    type: consonant
+    characteristics:
+      - stp
+      - uvl
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+  - ipa: ɢ͡ʁ
+    type: consonant
+    characteristics:
+      - afr
+      - uvl
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+  - ipa: ɣ
+    type: consonant
+    characteristics:
+      - frc
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: ɣ̟
+    type: consonant
+    characteristics:
+      - atr
+      - frc
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ɣ̠
+    type: consonant
+    characteristics:
+      - frc
+      - rtr
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+  - ipa: ɤ
+    type: vowel
+    characteristics:
+      - bck
+      - umd
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+      tense: true
+  - ipa: ɥ
+    type: other
+    characteristics:
+      - pal
+      - ptr apr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+      tense: true
+  - ipa: ɦ
+    type: other
+    characteristics:
+      - frc
+      - glt
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: true
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: ɧ
+    type: consonant
+    characteristics:
+      - pla
+      - vls
+      - vzd frc
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: ɨ
+    type: vowel
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: false
+      tense: true
+  - ipa: ɪ
+    type: vowel
+    characteristics:
+      - fnt
+      - smh
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+      tense: false
+  - ipa: ɫ
+    type: consonant
+    characteristics:
+      - alv
+      - fzd lat apr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: true
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+  - ipa: ɬ
+    type: consonant
+    characteristics:
+      - alv
+      - lat frc
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: ɭ
+    type: consonant
+    characteristics:
+      - lat apr
+      - rfx
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: ɮ
+    type: consonant
+    characteristics:
+      - alv
+      - lat frc
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: ɯ
+    type: vowel
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+      tense: true
+  - ipa: ɰ
+    type: other
+    characteristics:
+      - apr
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      tense: true
+  - ipa: ɰ̠
+    type: other
+    characteristics:
+      - apr
+      - rtr
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+      tense: true
+  - ipa: ɱ
+    type: consonant
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: true
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: true
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: ɲ
+    type: consonant
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: true
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ɳ
+    type: consonant
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: true
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: ɴ
+    type: consonant
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: true
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+  - ipa: ɵ
+    type: vowel
+    characteristics:
+      - cnt
+      - rnd
+      - umd
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: false
+      tense: true
+  - ipa: ɶ
+    type: vowel
+    characteristics:
+      - fnt
+      - low
+      - rnd
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: true
+      front: true
+      back: false
+  - ipa: ɸ
+    type: consonant
+    characteristics:
+      - blb
+      - frc
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: ɹ
+    type: other
+    characteristics:
+      - alv
+      - apr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: ɺ
+    type: consonant
+    characteristics:
+      - alv
+      - lat flp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: true
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: true
+      DORSAL: false
+  - ipa: ɻ
+    type: consonant
+    characteristics:
+      - apr
+      - rfx
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: ɽ
+    type: consonant
+    characteristics:
+      - flp
+      - rfx
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: true
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: ɾ
+    type: consonant
+    characteristics:
+      - alv
+      - flp
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: true
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: ʀ
+    type: consonant
+    characteristics:
+      - trl
+      - uvl
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: true
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+  - ipa: ʁ
+    type: consonant
+    characteristics:
+      - frc
+      - uvl
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+  - ipa: ʂ
+    type: consonant
+    characteristics:
+      - rfx
+      - sib frc
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: ʃ
+    type: consonant
+    characteristics:
+      - pla
+      - sib frc
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: ʈ
+    type: consonant
+    characteristics:
+      - rfx
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: ʈ͡ʂ
+    type: consonant
+    characteristics:
+      - rfx
+      - sib afr
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: ʉ
+    type: vowel
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: false
+      tense: true
+  - ipa: ʊ
+    type: vowel
+    characteristics:
+      - bck
+      - rnd
+      - smh
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+      tense: false
+  - ipa: ʋ
+    type: other
+    characteristics:
+      - apr
+      - lbd
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: true
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: ʌ
+    type: vowel
+    characteristics:
+      - bck
+      - lmd
+      - unr
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true
+      tense: false
+  - ipa: ʍ
+    type: other
+    characteristics:
+      - ptr apr
+      - vel
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: true
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+      tense: true
+  - ipa: ʎ
+    type: consonant
+    characteristics:
+      - lat apr
+      - pal
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: true
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ʏ
+    type: vowel
+    characteristics:
+      - fnt
+      - rnd
+      - smh
+    features:
+      syllabic: true
+      stress: false
+      long: false
+      consonantal: false
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: true
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+      tense: false
+  - ipa: ʐ
+    type: consonant
+    characteristics:
+      - rfx
+      - sib frc
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: false
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: ʑ
+    type: consonant
+    characteristics:
+      - alp
+      - sib frc
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ʒ
+    type: consonant
+    characteristics:
+      - pla
+      - sib frc
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: true
+      lateral: false
+      DORSAL: false
+  - ipa: ʔ
+    type: consonant
+    characteristics:
+      - glt
+      - stp
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: false
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: true
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: ʕ
+    type: consonant
+    characteristics:
+      - frc
+      - phr
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: false
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: true
+      front: false
+      back: true
+  - ipa: ʙ
+    type: consonant
+    characteristics:
+      - blb
+      - trl
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: true
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: ʝ
+    type: consonant
+    characteristics:
+      - frc
+      - pal
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: false
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ʟ
+    type: consonant
+    characteristics:
+      - lat apr
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: true
+      DORSAL: true
+      high: true
+      low: false
+  - ipa: ʟ̟
+    type: consonant
+    characteristics:
+      - atr
+      - lat apr
+      - vcd
+      - vel
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: true
+      DORSAL: true
+      high: true
+      low: false
+      front: true
+      back: false
+  - ipa: ʟ̠
+    type: consonant
+    characteristics:
+      - lat apr
+      - uvl
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: true
+      continuant: true
+      approximant: true
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: true
+      DORSAL: true
+      high: true
+      low: false
+      front: false
+      back: true
+  - ipa: β
+    type: consonant
+    characteristics:
+      - blb
+      - frc
+      - vcd
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: true
+      spread gl: false
+      constr gl: false
+      LABIAL: true
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: false
+  - ipa: θ
+    type: consonant
+    characteristics:
+      - dnt
+      - frc
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: true
+      anterior: true
+      distributed: true
+      strident: false
+      lateral: false
+      DORSAL: false
+  - ipa: χ
+    type: consonant
+    characteristics:
+      - frc
+      - uvl
+      - vls
+    features:
+      syllabic: false
+      stress: false
+      long: false
+      consonantal: true
+      sonorant: false
+      continuant: true
+      delayed release: true
+      approximant: false
+      tap: false
+      trill: false
+      nasal: false
+      voice: false
+      spread gl: false
+      constr gl: false
+      LABIAL: false
+      round: false
+      labiodental: false
+      CORONAL: false
+      lateral: false
+      DORSAL: true
+      high: false
+      low: false
+      front: false
+      back: true

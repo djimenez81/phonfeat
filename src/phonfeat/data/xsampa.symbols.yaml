@@ -1,0 +1,339 @@
+notation: xsampa
+description: XSAMPA symbol table, extracted from ipa_xsampa.
+symbols:
+  - symbol: '!\'
+    canonical: ǃ
+  - symbol: '"'
+    canonical: ˈ
+  - symbol: '%'
+    canonical: ˌ
+  - symbol: '&'
+    canonical: ɶ
+  - symbol: ''''
+    canonical: ʲ
+  - symbol: '''=\'
+    canonical: ǂ
+  - symbol: .
+    canonical: .
+  - symbol: '1'
+    canonical: ɨ
+  - symbol: '2'
+    canonical: ø
+  - symbol: '3'
+    canonical: ɜ
+  - symbol: 3\
+    canonical: ɞ
+  - symbol: 3`
+    canonical: ɝ
+  - symbol: '4'
+    canonical: ɾ
+  - symbol: '5'
+    canonical: ɫ
+  - symbol: '6'
+    canonical: ɐ
+  - symbol: '7'
+    canonical: ɤ
+  - symbol: '8'
+    canonical: ɵ
+  - symbol: '9'
+    canonical: œ
+  - symbol: ':'
+    canonical: ː
+  - symbol: :\
+    canonical: ˑ
+  - symbol: <\
+    canonical: ʢ
+  - symbol: '='
+    canonical: ̩
+  - symbol: '>\'
+    canonical: ʡ
+  - symbol: '?'
+    canonical: ʔ
+  - symbol: ?\
+    canonical: ʕ
+  - symbol: '@'
+    canonical: ə
+  - symbol: '@\'
+    canonical: ɘ
+  - symbol: '@`'
+    canonical: ɚ
+  - symbol: A
+    canonical: ɑ
+  - symbol: B
+    canonical: β
+  - symbol: B\
+    canonical: ʙ
+  - symbol: C
+    canonical: ç
+  - symbol: D
+    canonical: ð
+  - symbol: E
+    canonical: ɛ
+  - symbol: F
+    canonical: ɱ
+  - symbol: G
+    canonical: ɣ
+  - symbol: G\
+    canonical: ɢ
+  - symbol: G\_<
+    canonical: ʛ
+  - symbol: H
+    canonical: ɥ
+  - symbol: H\
+    canonical: ʜ
+  - symbol: I
+    canonical: ɪ
+  - symbol: J
+    canonical: ɲ
+  - symbol: J\
+    canonical: ɟ
+  - symbol: J\_<
+    canonical: ʄ
+  - symbol: K
+    canonical: ɬ
+  - symbol: K\
+    canonical: ɮ
+  - symbol: L
+    canonical: ʎ
+  - symbol: L\
+    canonical: ʟ
+  - symbol: M
+    canonical: ɯ
+  - symbol: M\
+    canonical: ɰ
+  - symbol: N
+    canonical: ŋ
+  - symbol: N\
+    canonical: ɴ
+  - symbol: Nm
+    canonical: ŋ͡m
+  - symbol: O
+    canonical: ɔ
+  - symbol: O\
+    canonical: ʘ
+  - symbol: P
+    canonical: ʋ
+  - symbol: Q
+    canonical: ɒ
+  - symbol: R
+    canonical: ʁ
+  - symbol: R\
+    canonical: ʀ
+  - symbol: S
+    canonical: ʃ
+  - symbol: T
+    canonical: θ
+  - symbol: U
+    canonical: ʊ
+  - symbol: V
+    canonical: ʌ
+  - symbol: W
+    canonical: ʍ
+  - symbol: X
+    canonical: χ
+  - symbol: X\
+    canonical: ħ
+  - symbol: Y
+    canonical: ʏ
+  - symbol: Z
+    canonical: ʒ
+  - symbol: _"
+    canonical: ̈
+  - symbol: _+
+    canonical: ̟
+  - symbol: _-
+    canonical: ̠
+  - symbol: _0
+    canonical: ̥
+  - symbol: _>
+    canonical: ʼ
+  - symbol: _?\
+    canonical: ˤ
+  - symbol: _A
+    canonical: ̘
+  - symbol: _B
+    canonical: ̏
+  - symbol: _G
+    canonical: ˠ
+  - symbol: _H
+    canonical: ́
+  - symbol: _L
+    canonical: ̀
+  - symbol: _M
+    canonical: ̄
+  - symbol: _N
+    canonical: ̼
+  - symbol: _O
+    canonical: ̹
+  - symbol: _T
+    canonical: ̋
+  - symbol: _X
+    canonical: ̆
+  - symbol: _^
+    canonical: ̯
+  - symbol: _a
+    canonical: ̺
+  - symbol: _c
+    canonical: ̜
+  - symbol: _d
+    canonical: ̪
+  - symbol: _e
+    canonical: ̴
+  - symbol: _h
+    canonical: ʰ
+  - symbol: _k
+    canonical: ̰
+  - symbol: _l
+    canonical: ˡ
+  - symbol: _m
+    canonical: ̻
+  - symbol: _n
+    canonical: ⁿ
+  - symbol: _o
+    canonical: ̞
+  - symbol: _q
+    canonical: ̙
+  - symbol: _r
+    canonical: ̝
+  - symbol: _t
+    canonical: ̤
+  - symbol: _v
+    canonical: ̬
+  - symbol: _w
+    canonical: ʷ
+  - symbol: _x
+    canonical: ̽
+  - symbol: _}
+    canonical: ̚
+  - symbol: a
+    canonical: a
+  - symbol: a_X
+    canonical: ă
+  - symbol: b
+    canonical: b
+  - symbol: b_<
+    canonical: ɓ
+  - symbol: c
+    canonical: c
+  - symbol: c_>
+    canonical: cʼ
+  - symbol: d
+    canonical: d
+  - symbol: dZ
+    canonical: d͡ʒ
+  - symbol: d_<
+    canonical: ɗ
+  - symbol: d`
+    canonical: ɖ
+  - symbol: dz\
+    canonical: d͡ʑ
+  - symbol: e
+    canonical: e
+  - symbol: f
+    canonical: f
+  - symbol: h
+    canonical: h
+  - symbol: h\
+    canonical: ɦ
+  - symbol: i
+    canonical: i
+  - symbol: j
+    canonical: j
+  - symbol: j\
+    canonical: ʝ
+  - symbol: k
+    canonical: k
+  - symbol: k_<
+    canonical: ɠ̥
+  - symbol: k_>
+    canonical: kʼ
+  - symbol: kp
+    canonical: k͡p
+  - symbol: l
+    canonical: l
+  - symbol: l\
+    canonical: ɺ
+  - symbol: l`
+    canonical: ɭ
+  - symbol: m
+    canonical: m
+  - symbol: n
+    canonical: n
+  - symbol: n`
+    canonical: ɳ
+  - symbol: o
+    canonical: o
+  - symbol: p
+    canonical: p
+  - symbol: p\
+    canonical: ɸ
+  - symbol: p_>
+    canonical: pʼ
+  - symbol: q
+    canonical: q
+  - symbol: q_>
+    canonical: qʼ
+  - symbol: r
+    canonical: r
+  - symbol: r\
+    canonical: ɹ
+  - symbol: r\`
+    canonical: ɻ
+  - symbol: r`
+    canonical: ɽ
+  - symbol: s
+    canonical: s
+  - symbol: s\
+    canonical: ɕ
+  - symbol: s`
+    canonical: ʂ
+  - symbol: t
+    canonical: t
+  - symbol: tK
+    canonical: t͡ɬ
+  - symbol: tS
+    canonical: t͡ʃ
+  - symbol: t_>
+    canonical: tʼ
+  - symbol: t`
+    canonical: ʈ
+  - symbol: t`_>
+    canonical: ʈʼ
+  - symbol: ts\
+    canonical: t͡ɕ
+  - symbol: ts`
+    canonical: ʈ͡ʂ
+  - symbol: tz`
+    canonical: ɖ͡ʐ
+  - symbol: u
+    canonical: u
+  - symbol: v
+    canonical: v
+  - symbol: w
+    canonical: w
+  - symbol: x
+    canonical: x
+  - symbol: y
+    canonical: y
+  - symbol: z
+    canonical: z
+  - symbol: z\
+    canonical: ʑ
+  - symbol: z`
+    canonical: ʐ
+  - symbol: '{'
+    canonical: æ
+  - symbol: '|\'
+    canonical: ǀ
+  - symbol: '|\|\'
+    canonical: ǁ
+  - symbol: '}'
+    canonical: ʉ
+  - symbol: '~'
+    canonical: ̃
+  - symbol: ɡ
+    canonical: ɡ
+  - symbol: ɡ_<
+    canonical: ɠ
+  - symbol: ɡb
+    canonical: ɡ͡b
