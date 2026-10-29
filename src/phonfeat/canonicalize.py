@@ -246,37 +246,83 @@ def _apply_deprecations(
 
 
 def _reorder_diacritics(symbol: str) -> str:
-    """Reorder combining diacritics into the canonical sequence.
+    """Reorder diacritics into the canonical sequence.
 
-    Combining marks are identified by ``unicodedata.combining``;
-    non-combining characters keep their position. Diacritics listed
-    in the ordering table are sorted by their rank; unlisted
-    combining marks retain their original relative order and come
-    after all listed marks.
+    A phone is decomposed into one or more "segments" separated by
+    tie bars. Each segment has a base character followed by a
+    sequence of modifiers (combining marks and modifier letters).
+    Within each segment, modifiers are reordered by their position
+    in the diacritic order table.
+
+    Tie bars (U+0361, U+035C) are preserved between segments; they
+    are not treated as modifiers and are never moved.
     """
     if not symbol:
         return symbol
-    rank = _diacritic_rank()
-    base_chars: list[str] = []
-    combining: list[tuple[str, int]] = []
-    for char in symbol:
-        if unicodedata.combining(char):
-            combining.append((char, rank.get(char, 10_000)))
-        else:
-            base_chars.append(char)
-    if not combining:
-        return symbol
-    # Stable sort: listed diacritics first, in canonical order;
-    # unlisted diacritics retain their original relative order.
-    indexed = list(enumerate(combining))
-    indexed.sort(key=lambda pair: (pair[1][1], pair[0]))
-    ordered = [char for _, (char, _) in indexed]
-    # Base characters stay in their original relative order at the
-    # front. This is a simplification: a truly general solution
-    # would interleave base and combining marks, but for IPA the
-    # base always precedes its diacritics.
-    return "".join(base_chars) + "".join(ordered)
 
+    tie_bars = ("\u0361", "\u035c")
+    rank = _diacritic_rank()
+
+    # Split into segments at tie bars, keeping the tie bars as
+    # separate tokens so we can reattach them in place.
+    segments: list[list[str]] = [[]]
+    tie_bar_tokens: list[str] = []
+    for char in symbol:
+        if char in tie_bars:
+            tie_bar_tokens.append(char)
+            segments.append([])
+        else:
+            segments[-1].append(char)
+
+    reordered: list[str] = []
+    for i, segment in enumerate(segments):
+        reordered.append(_reorder_segment(segment, rank))
+        if i < len(tie_bar_tokens):
+            reordered.append(tie_bar_tokens[i])
+    return "".join(reordered)
+
+
+def _is_modifier(char: str) -> bool:
+    """Return True if ``char`` is a diacritic-like character.
+
+    This covers combining marks (Unicode combining class > 0) and
+    modifier letters (Unicode general category ``Lm``), which
+    includes length marks, nasalization superscripts, and other
+    spacing diacritics.
+    """
+    if unicodedata.combining(char):
+        return True
+    return unicodedata.category(char) == "Lm"
+
+
+def _reorder_segment(
+    segment: list[str], rank: dict[str, int]
+) -> str:
+    """Reorder one tie-bar-separated segment.
+
+    The first character is the nucleus and stays in place. The
+    remaining characters are modifiers and are sorted by rank;
+    characters not in the rank table keep their original relative
+    order and are placed after all ranked ones.
+    """
+    if not segment:
+        return ""
+    nucleus = segment[0]
+    modifiers = segment[1:]
+    if not modifiers:
+        return nucleus
+    indexed = list(enumerate(modifiers))
+    # Modifiers not in the rank table are not reordered; they keep
+    # their original position, which we encode by giving them the
+    # index as a tiebreak and a large rank.
+    indexed.sort(
+        key=lambda pair: (
+            rank.get(pair[1], 10_000),
+            pair[0],
+        )
+    )
+    ordered = [char for _, char in indexed]
+    return nucleus + "".join(ordered)
 
 def canonicalize_ipa(symbol: str) -> str:
     """Return the canonical IPA form of ``symbol``.
