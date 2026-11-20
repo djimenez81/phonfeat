@@ -61,6 +61,30 @@ VOWELS_SHEET = "vowels_ipa"
 OTHERS_SHEET = "others_ipa"
 DEFINITIONS_SHEET = "definitions"
 
+# Map from definitions-sheet category names to short classifier
+# names. Categories not listed here are lowercased and
+# underscore-joined; this keeps unexpected categories from
+# crashing the script.
+_CATEGORY_TO_CLASSIFIER = {
+    "Manner of Articulation": "manner",
+    "Place of Articulation": "place",
+    "Voice": "voicing",
+    "Diacritic": "diacritic",
+    "Phonation": "phonation",
+    "Rounding and Labialization": "rounding",
+    "Syllabicity": "syllabicity",
+    "Consonant Release": "release",
+    "Coarticulation": "coarticulation",
+    "Tongue Root": "tongue_root",
+    "Length": "length",
+    "Stress": "stress",
+    "Rhythm": "rhythm",
+    "Tone": "tone",
+    "Height": "height",
+    "Backness": "backness",
+    "Roundness": "roundness",
+}
+
 
 # ---------------------------------------------------------------------
 # Reading
@@ -85,6 +109,66 @@ class _IndentedDumper(yaml.SafeDumper):
         self, flow: bool = False, indentless: bool = False
     ) -> None:
         return super().increase_indent(flow, False)
+
+
+def _normalize_category(raw: str) -> str:
+    """Map a definitions-sheet category to a classifier name."""
+    if raw in _CATEGORY_TO_CLASSIFIER:
+        return _CATEGORY_TO_CLASSIFIER[raw]
+    return raw.lower().replace(" ", "_").replace("/", "_")
+
+
+def extract_classifier_map(df: pd.DataFrame) -> dict[str, str]:
+    """Build a mapping from abbreviation to classifier name.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        The ``definitions`` sheet, with columns ``category`` and
+        ``abbreviation``.
+
+    Returns
+    -------
+    dict
+        Mapping from abbreviation (e.g. ``"vls"``) to classifier
+        name (e.g. ``"voicing"``).
+    """
+    if df.empty:
+        return {}
+    category_col = df.columns[0]
+    abbrev_col = df.columns[1]
+    result: dict[str, str] = {}
+    for _, row in df.iterrows():
+        abbrev = clean(row[abbrev_col])
+        category = clean(row[category_col])
+        if not abbrev or not category:
+            continue
+        classifier = _normalize_category(category)
+        if abbrev in result and result[abbrev] != classifier:
+            print(
+                f"WARN: abbreviation {abbrev!r} maps to both "
+                f"{result[abbrev]!r} and {classifier!r}"
+            )
+            continue
+        result[abbrev] = classifier
+    return result
+
+
+def apply_classification_tags(phone: dict[str, Any]) -> None:
+    """Rename ``phone['characteristics']`` to ``classification_tags``.
+
+    The rename reflects a schema change: the field is now
+    understood as a list of classifier abbreviations, and is
+    stored on ``Segment.metadata`` rather than
+    ``Segment.classification`` (because some phones have more than
+    one tag under the same classifier, e.g. ``sib frc``).
+
+    Mutates ``phone`` in place.
+    """
+    chars = phone.pop("characteristics", None)
+    if not chars:
+        return
+    phone["classification_tags"] = list(chars)
 
 
 def read_sheet(ods_path: Path, sheet: str) -> pd.DataFrame:
@@ -429,6 +513,7 @@ def extract_symbol_table(
         entries[symbol] = canonical
 
     return {
+        "schema_version": "1.1",
         "notation": side,
         "description": (
             f"{side.upper()} symbol table, extracted from "
@@ -439,7 +524,6 @@ def extract_symbol_table(
             for symbol, canonical in sorted(entries.items())
         ],
     }
-
 
 # ---------------------------------------------------------------------
 # Characteristics from grid sheets
@@ -518,7 +602,11 @@ def extract_characteristics(
                         f"canonicalize {cell!r}: {exc}"
                     )
                     continue
-                tags = {row_header}
+                # A grid header like "sib frc" is a compound tag
+                # meaning "sibilant fricative"; split it into
+                # components so each maps to its own classifier.
+                tags: set[str] = set()
+                tags.update(row_header.split())
                 if col_index < len(column_headers):
                     tags.update(column_headers[col_index])
                 result[canonical].update(tags)
@@ -578,7 +666,8 @@ def apply_characteristics(
 
 
 def write_feature_system(
-    system: FeatureSystemData, path: Path
+    system: FeatureSystemData,
+    path: Path,
 ) -> None:
     """Write a feature-system YAML file."""
     features_block = []
@@ -593,11 +682,12 @@ def write_feature_system(
 
     phones_block = []
     for phone in sorted(system.phones, key=lambda p: p.ipa):
-        entry = {"ipa": phone.ipa, "type": phone.type}
+        entry: dict[str, Any] = {"ipa": phone.ipa, "type": phone.type}
         if phone.name:
             entry["name"] = phone.name
         if phone.characteristics:
             entry["characteristics"] = phone.characteristics
+        apply_classification_tags(entry)
         defined = {
             name: value
             for name, value in phone.feature_values.items()
@@ -607,7 +697,7 @@ def write_feature_system(
         phones_block.append(entry)
 
     data = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "name": system.name,
         "version": system.version,
         "description": system.description,
@@ -668,7 +758,6 @@ def write_diagnostics(
 # Main
 # ---------------------------------------------------------------------
 
-
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Convert the phonfeat ODS to YAML."
@@ -703,6 +792,10 @@ def main() -> None:
     panphon_df = read_sheet(args.ods, PANPHON_SHEET)
     hayes_df = read_sheet(args.ods, HAYES_SHEET)
     ipa_xsampa_df = read_sheet(args.ods, IPA_XSAMPA_SHEET)
+    definitions_df = read_sheet(args.ods, DEFINITIONS_SHEET)
+
+    classifier_map = extract_classifier_map(definitions_df)
+    print(f"  {len(classifier_map)} abbreviations mapped to classifiers")
 
     print(f"  {PANPHON_SHEET}: {len(panphon_df)} rows")
     print(f"  {HAYES_SHEET}: {len(hayes_df)} rows")

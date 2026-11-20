@@ -88,9 +88,13 @@ Each entry has:
 | `xsampa`         | string  | no       | Canonical X-SAMPA form.        |
 | `type`           | string  | yes      | `consonant`, `vowel`, or `other`. |
 | `name`           | string  | no       | Human-readable description.    |
-| `characteristics`| list    | no       | Short classifier tags, e.g. `[vls, blb, stp]`. |
+| `classification_tags` | list | no    | Short classifier tags, e.g. `[vls, blb, stp]`. See §1.4. |
 | `features`       | mapping | no       | Feature values. Defaults to empty. |
 | `metadata`       | mapping | no       | Arbitrary application data.    |
+
+The `xsampa` and `metadata` keys are specified but not currently
+produced by `scripts/ods_to_yaml.py`, and `storage.py` does not read
+them. `name` is likewise specified but neither produced nor read.
 
 Constraints:
 
@@ -98,46 +102,41 @@ Constraints:
 - `type` must be one of the three values listed.
 - Every key in `features` must match a declared feature name or
   alias.
-- Every key in `characteristics` must match a declared
-  characteristic tag (see §1.4).
+- `classification_tags` entry values are not validated against a
+  vocabulary; `phonfeat` accepts any abbreviation (§1.4).
 - The `ipa` value must be in canonical form (§4).
 
-### 1.4 Feature values and undefined
+### 1.4 The `phones` block — classification tags
 
-The `features` mapping may contain, for each feature, one of:
-
-- `true` — the feature applies and is positive.
-- `false` — the feature applies and is negative.
-- *absent from the mapping* — the feature is undefined for this
-  phone.
-
-This is a three-valued encoding. An absent feature is **not**
-equivalent to `false`: it means the feature does not apply to the
-phone, or the phone's value for that feature is not specified.
-
-Example: mid tone, whose PanPhon features are both undefined.
+The optional `classification_tags` list holds short classifier
+abbreviations that describe the phone's articulatory properties.
+Each element is a single abbreviation, e.g. `vls` (voiceless),
+`blb` (bilabial), `stp` (stop). A phone may have any number of
+tags; a phone with no tags has no articulatory classification.
 
 ```yaml
-- ipa: "˧"
-  type: other
-  name: "mid tone"
-  features: {}
+- ipa: s
+  type: consonant
+  classification_tags: [sib, frc, vls, alv]
+  features:
+    ...
 ```
 
-The loader translates `true` to `Value("+")`, `false` to
-`Value("-")`, and absence to no entry in `Segment.values`.
+Some properties are naturally multi-valued. A phone may have
+multiple tags under the same classifier: `s` is both a sibilant
+(`sib`) and a fricative (`frc`), both of which are manner
+properties. The schema does not enforce one-tag-per-classifier.
+Consumers who want structured classification can group tags by
+classifier using the mapping in the `definitions` sheet.
 
-### 1.5 Characteristics
+`phonfeat` does not enforce a fixed vocabulary of tags. The
+built-in files use the abbreviations defined in the `definitions`
+sheet of the source ODS.
 
-The optional `characteristics` list holds short tags classifying
-the phone. These become `Segment.classification` values, keyed by
-whatever classifier the consumer chooses.
-
-`phonfeat` does not enforce a fixed vocabulary of characteristic
-tags, but the built-in files use the abbreviations defined in the
-`definitions` sheet of the source ODS. Consumers who want
-validation can supply a `ValueSet` per classifier at
-`SegmentInventory` construction time.
+*In previous schema versions (1.0 and earlier), this field was
+called `characteristics` and stored under a single classifier
+name. Files written against 1.0 are rejected by the current
+loader.*
 
 ---
 
@@ -175,6 +174,14 @@ symbols:
 Required top-level keys: `notation`, `symbols`.
 
 Optional: `description`, `diacritics`, `tie_bar`.
+
+**Not yet implemented.** The `diacritics` and `tie_bar` blocks, and
+the per-symbol `kind` field below, are specified here but are neither
+produced by `scripts/ods_to_yaml.py` nor read by `storage.py`. The
+shipped tables contain only `schema_version`, `notation`,
+`description`, and `symbols`. Treat those three constructs as
+reserved for the tokenizer work rather than as current format
+features.
 
 ### 2.2 The `symbols` block
 
@@ -269,9 +276,11 @@ transformations in order:
    listed, it retains its original position, relative to other
    unlisted diacritics.
 4. **Tie bar normalization.** Prefer the combining tie bar
-   (U+0361, `t͡ʃ`) over the ligature (U+02A8). Prefer tie bars
-   over sequences without tie bars when the combination is a
-   recognized affricate.
+   (U+0361, `t͡ʃ`) over the ligature (U+02A8). This is currently
+   achieved through `deprecations.yaml` (ligature affricates are
+   listed there as replacements), not by a separate normalization
+   step in `canonicalize.py`. Preferring tie bars over unmarked
+   sequences is *not* implemented.
 
 The canonical form is what appears in a feature system file's
 `ipa` field.
@@ -321,16 +330,32 @@ offending entry.
 
 Validators check:
 
-- **Structural:** required keys present; types match; no unknown
-  keys at the top level.
+- **Structural:** required keys present; types match.
 - **Referential:** every feature value keys a declared feature;
-  every characteristic keys a declared tag (if a vocabulary is
-  supplied); every `canonical` in a symbol table matches an `ipa`
-  in the loaded feature system.
+  every `canonical` in a symbol table matches an `ipa` in the loaded
+  feature system. (The second half is not yet enforced: the loader
+  validates each symbol table in isolation, without a feature system
+  in hand.)
 - **Uniqueness:** feature names, phone `ipa` values, symbol table
   entries.
 - **Canonicalization:** every phone's `ipa` field is already in
   canonical form; a violation is an error, not silently fixed.
+
+### 5.1 Known gaps between this spec and the loader
+
+These are specified but not enforced by `storage.py` as of
+`phonfeat` 0.1.0. They are listed rather than removed so the next
+session does not have to rediscover them:
+
+- Unknown top-level keys are ignored, not rejected.
+- Unknown keys inside a `features` or `phones` entry are ignored.
+- `classification_tags` are not checked against a tag vocabulary.
+- Symbol-table `canonical` values are not cross-checked against a
+  feature system.
+- The `diacritics`, `tie_bar`, and per-symbol `kind` constructs are
+  not parsed (§2.1).
+
+Closing any of these is a behavior change and needs a test.
 
 Canonicalization being an error rather than an auto-fix is
 deliberate: it forces the data producer to run the canonicalizer
@@ -395,13 +420,23 @@ symbols:
 ## 7. Versioning
 
 This specification is versioned alongside `phonfeat`. The current
-version is **1.0**, corresponding to `phonfeat` 0.1.x. A file may
+version is **1.1**, corresponding to `phonfeat` 0.1.x. A file may
 declare the schema version it was written against:
 
 ```yaml
-schema_version: "1.0"
+schema_version: "1.1"
 ```
 
-If present, `phonfeat` rejects files declaring a future version.
-If absent, the loader assumes the current version.
-```
+If present, `phonfeat` rejects files declaring any version other
+than the current one; if absent, the loader assumes the current
+version.
+
+### Revision history
+
+**1.1** (2026-10-29): Replaced `characteristics` (a list of
+compound phrases like `sib frc`) with `classification_tags` (a
+list of single abbreviations like `sib`, `frc`). Files written
+against 1.0 are rejected.
+
+**1.0** (2026-10-15): Initial version. `characteristics` as a
+list of tags.

@@ -7,9 +7,11 @@ IPA canonicalization applies, in order:
 
 1. NFC normalization.
 2. Deprecation replacement (``g`` -> ``ɡ``, ligature affricates ->
-   tie-barred forms).
+   tie-barred forms). Tie-bar normalization is achieved here,
+   through the deprecation table, rather than by a separate step.
 3. Diacritic reordering per the diacritic order table.
-4. Tie bar normalization.
+4. A final NFC normalization, so that the reordering does not leave
+   the string in a non-normalized sequence.
 
 X-SAMPA canonicalization is simpler:
 
@@ -31,7 +33,7 @@ from typing import Iterable, Sequence
 
 import yaml
 
-from .errors import DataFormatError
+from .errors import DataFormatError, NotationError
 
 __all__ = [
     "DeprecationRule",
@@ -40,6 +42,7 @@ __all__ = [
     "canonicalize_xsampa",
     "load_deprecations",
     "load_diacritic_order",
+    "normalize_for_matching",
 ]
 
 
@@ -377,3 +380,68 @@ def canonicalize_xsampa(symbol: str) -> str:
         )
     result = _apply_deprecations(symbol, _cached_deprecations())
     return result
+
+
+def normalize_for_matching(
+    text: str, notation: str = "ipa"
+) -> str:
+    """Apply the canonicalization steps that preserve phone boundaries.
+
+    Canonicalization as a whole is a *single-phone* operation: the
+    diacritic-reordering step treats everything after the first
+    character of a tie-bar-separated chunk as a modifier, so applying
+    it to a multi-phone string moves diacritics across phone
+    boundaries. ``canonicalize_ipa("ba\u02d0d")`` returns
+    ``"b\u02d0ad"`` for exactly this reason.
+
+    This function applies only the steps that are safe on arbitrary
+    strings — Unicode decomposition for IPA, and the deprecation rules
+    for both notations — so that a string can be prepared for
+    maximal-munch matching before its phone boundaries are known.
+    Reordering is then done per token, once each token is known to be
+    a single phone.
+
+    Decomposition, not composition
+    ------------------------------
+    IPA is decomposed to NFD here rather than composed to NFC. The
+    symbol table lists bases (``a``) and combining marks
+    (``U+0303``) as separate symbols, because diacritics are stacked
+    onto the phone they follow; composing the input would turn
+    ``a`` + ``U+0303`` into the single character ``ã``, which is no
+    symbol in the table, and the combining mark could never be
+    matched at all. Each token is composed back to NFC by
+    :func:`canonicalize_ipa` once it has been assembled, so the
+    segment symbols that come out are still composed.
+
+    Parameters
+    ----------
+    text : str
+        The string to normalize. May contain any number of phones.
+    notation : str, optional
+        Either ``"ipa"`` (the default) or ``"xsampa"``.
+
+    Returns
+    -------
+    str
+        The normalized string, with phone boundaries intact.
+
+    Raises
+    ------
+    NotationError
+        If ``notation`` is neither ``"ipa"`` nor ``"xsampa"``.
+    TypeError
+        If ``text`` is not a string.
+    """
+    if not isinstance(text, str):
+        raise TypeError(
+            f"normalize_for_matching expects str, got "
+            f"{type(text).__name__}"
+        )
+    if notation == "ipa":
+        text = unicodedata.normalize("NFD", text)
+    elif notation != "xsampa":
+        raise NotationError(
+            f"Unknown notation {notation!r}; expected 'ipa' or "
+            f"'xsampa'"
+        )
+    return _apply_deprecations(text, _cached_deprecations())

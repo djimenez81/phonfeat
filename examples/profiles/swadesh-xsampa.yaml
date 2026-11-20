@@ -1,0 +1,40 @@
+# Example transcription profile — NOT shipped data, NOT a fact.
+#
+# Written for the Chibchan Swadesh sheet in the handover corpus: a
+# translation table whose cells are X-SAMPA with tone diacritics, some
+# cells holding several space-separated words, and a few characters
+# taken from Spanish/German orthography instead of X-SAMPA.
+#
+# Two kinds of character in this file are deliberately left
+# undeclared. A profile is where such decisions belong, but they are
+# the corpus owner's to make, and inventing them here would be worse
+# than leaving them visible as blockers.
+notation: xsampa
+description: >-
+  Chibchan Swadesh list. X-SAMPA with _H/_L tones, length and
+  nasalization marks. Verify before reuse.
+
+# Cells hold whole phrases ("Kaxa:Ra Ku:tu iNa:Ne"); each word is a
+# form of its own for inventory purposes.
+split: "\\s+"
+
+substitutions:
+  # ñ is Spanish orthography for the palatal nasal, which X-SAMPA
+  # spells J. Same call as the IPA corpus, same symbol.
+  "ñ": "J"
+
+  # NOT declared, because the reading is genuinely unknown:
+  #
+  #   "ö" and "ü" — German/Spanish orthographic vowels in an
+  #   otherwise X-SAMPA file (köhka, kümöna). X-SAMPA spells the front
+  #   rounded vowels 2 and y, but whether the transcribers meant [ø
+  #   y] or were reaching for [ɨ] in a language without rounding is a
+  #   question for whoever wrote the sheet.
+  #
+  #   "_/" and "_\\" — contour tones that are not in the X-SAMPA tone
+  #   series (_H _L _M _B _T). They occur in 63 cells of the full
+  #   corpus. Guessing a contour here would silently fabricate 63
+  #   readings.
+  #
+  # Until they are declared, survey() reports them as blockers, which
+  # is the intended behaviour: the gap stays visible.

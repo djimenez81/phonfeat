@@ -1,0 +1,37 @@
+# Example transcription profile — NOT shipped data, NOT a fact.
+#
+# This is what a user of `phonfeat` would write for a corpus that is
+# not readable as textbook IPA. It belongs to the corpus it was
+# written for; it encodes a *reading*, and the reading must come from
+# the source's own orthography key, not from a guess.
+#
+# Written for the Austronesian cognate list in the handover corpus:
+# one list of forms per line, forms carrying morpheme hyphens, some
+# cells holding comma-separated variant readings, and ñ used for the
+# palatal nasal.
+notation: ipa
+description: >-
+  Austronesian cognate lists, practical orthography with IPA
+  substitutions. Verify before reuse.
+
+# Characters that mark structure rather than sound. Hyphens join
+# morphemes, so for inventory purposes they are removed.
+strip_chars: "-"
+
+# Cells can hold several independent forms ("bacok, bacuk") or a
+# multi-word entry ("ikan abu-abu"). Each becomes its own form.
+split: "[\\s,;]+"
+
+substitutions:
+  # Confirmed by the corpus owner: ñ is the palatal nasal here.
+  "ñ": "ɲ"
+
+  # The three below are the same kind of decision and are the reason
+  # this file is data rather than code: they are *not* applied unless
+  # the corpus owner adds them. Uncomment only if the source's
+  # orthography key says so, because uncommented they change the
+  # inventory substantially (c is 1.1% of forms, j 0.9%, y 5.3%).
+  #
+  #   "c": "t͡ʃ"
+  #   "j": "d͡ʒ"
+  #   "y": "j"

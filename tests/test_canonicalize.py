@@ -9,6 +9,7 @@ from phonfeat.canonicalize import (
     DiacriticCategory,
     load_deprecations,
     load_diacritic_order,
+    normalize_for_matching,
 )
 
 
@@ -133,3 +134,17 @@ class TestIdempotence:
         # same canonical form.
         canonical = canonicalize_ipa(symbol)
         assert canonical == canonicalize_ipa("qˤː")
+
+
+def test_normalize_for_matching_decomposes_ipa():
+    """Matching happens on decomposed text, so marks can be matched.
+
+    Composing here would fuse a base and its combining mark into one
+    character no symbol in the table matches.
+    """
+    normalized = normalize_for_matching("\u00e3")
+    assert normalized == "a\u0303"
+
+
+def test_normalize_for_matching_leaves_modifier_letters_alone():
+    assert normalize_for_matching("k\u02b0") == "k\u02b0"
